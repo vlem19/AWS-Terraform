@@ -15,7 +15,11 @@ locals {
   )
 }
 
-resource "aws_dynamodb_table" "default" {
+resource "aws_dynamodb_table" "ddbtable" {
   cidr_block = "10.0.0.0/16"
-  hash_key   = var.hash_key
+  name           = var.table_name
+  hash_key       = var.hash_key
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 2
+  write_capacity = 2
 }
