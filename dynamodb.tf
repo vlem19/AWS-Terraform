@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "default" {
   name           = var.table_name
   hash_key       = var.hash_key
   billing_mode   = "PROVISIONED"
